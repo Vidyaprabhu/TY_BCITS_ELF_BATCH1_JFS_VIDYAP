@@ -1,0 +1,368 @@
+DATE:19-12-2019
+
+1.show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+2. use bcits;
+Database changed
+
+3. desc Student_info;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| Sid      | int(10)      | NO   | PRI | NULL    |       |
+| Name     | varchar(150) | NO   |     | NULL    |       |
+| MobileNo | int(11)      | YES  |     | NULL    |       |
+| marks    | double       | YES  |     | NULL    |       |
+| email    | varchar(100) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+4. select * from Student_info;
++-----+------+-----------+-------+----------------+
+| Sid | Name | MobileNo  | marks | email          |
++-----+------+-----------+-------+----------------+
+|   1 | a    | 798745634 |    54 | abc@gmail.com  |
+|   2 | b    | 985486455 |    74 | bcd@gmail.com  |
+|   3 | c    | 775546455 |    54 | edd@gmail.com  |
+|   4 | d    | 944546455 |    54 | ded@gmail.com  |
+|   5 | e    | 984546455 |    95 | dssd@gmail.com |
+|   6 | s    | 747394056 |    97 | dsdw@gmail.com |
+|   7 | e    | 984546455 |    95 | dssd@gmail.com |
+|   8 | ze   | 984546455 |    95 | dssd@gmail.com |
+|   9 | z    | 747394056 |    97 | dsdw@gmail.com |
++-----+------+-----------+-------+----------------+
+9 rows in set (0.00 sec)
+
+5.delete from Student_info where Sid=7;
+Query OK, 1 row affected (0.09 sec)
+
+6.alter table Student_info add(place varchar(20));
+Query OK, 0 rows affected (1.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+7.select * from Student_info;
++-----+------+-----------+-------+----------------+-------+
+| Sid | Name | MobileNo  | marks | email          | place |
++-----+------+-----------+-------+----------------+-------+
+|   1 | a    |  98745634 |    54 | abc@gmail.com  | NULL  |
+|   2 | b    |   5486455 |    74 | bcd@gmail.com  | NULL  |
+|   3 | c    |   5546455 |    54 | edd@gmail.com  | NULL  |
+|   4 | d    |  44546455 |    54 | ded@gmail.com  | NULL  |
+|   5 | e    | 984546455 |    95 | dssd@gmail.com | NULL  |
+|   6 | s    | 747394056 |    97 | dsdw@gmail.com | NULL  |
+|   8 | ze   | 984546455 |    95 | dssd@gmail.com | NULL  |
+|   9 | z    | 747394056 |    97 | dsdw@gmail.com | NULL  |
++-----+------+-----------+-------+----------------+-------+
+8 rows in set (0.00 sec)
+
+8. alter table Student_info drop column place;
+Query OK, 0 rows affected (0.63 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+9.alter table Student_info modify MobileNo int(11);
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+10.update Student_info set MobileNo= 98765435 where Sid=3;
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+11.drop table Student_info;
+Query OK, 0 rows affected (0.20 sec)
+
+12.create table Student_info (Sid int(10) primary key, Name varchar(20) not null,MobileNo int(11), marks double, email varchar(100));
+Query OK, 0 rows affected (0.63 sec)
+
+13.insert into Student_info values(1,'a',75648732,54,'agfs@gmail.com');
+Query OK, 1 row affected (0.33 sec)
+
+14.insert into Student_info values(2,'b',88648732,54,'ytfs@gmail.com');
+Query OK, 1 row affected (0.08 sec)
+
+15. insert into Student_info values(3,'c',898748732,57,'abfs@gmail.com');
+Query OK, 1 row affected (0.08 sec)
+
+16. insert into Student_info values(4,'d',998748732,97,'ete@gmail.com');
+Query OK, 1 row affected (0.08 sec)
+
+17. select * from Student_info;
++-----+------+-----------+-------+----------------+
+| Sid | Name | MobileNo  | marks | email          |
++-----+------+-----------+-------+----------------+
+|   1 | a    |  75648732 |    54 | agfs@gmail.com |
+|   2 | b    |  88648732 |    54 | ytfs@gmail.com |
+|   3 | c    | 898748732 |    57 | abfs@gmail.com |
+|   4 | d    | 998748732 |    97 | ete@gmail.com  |
++-----+------+-----------+-------+----------------+
+4 rows in set (0.00 sec)
+
+18.rename Student_info to Student;
+Query OK, 0 rows affected (0.43 sec)
+
+19. select * from Student;
++-----+------+-----------+-------+----------------+
+| Sid | Name | MobileNo  | marks | email          |
++-----+------+-----------+-------+----------------+
+|   1 | a    |  75648732 |    54 | agfs@gmail.com |
+|   2 | b    |  88648732 |    54 | ytfs@gmail.com |
+|   3 | c    | 898748732 |    57 | abfs@gmail.com |
+|   4 | d    | 998748732 |    97 | ete@gmail.com  |
++-----+------+-----------+-------+----------------+
+4 rows in set (0.00 sec)
+
+20.create database testyantra;
+Query OK, 1 row affected (0.00 sec)
+
+21. show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sys                |
+| testyantra         |
++--------------------+
+6 rows in set (0.00 sec)
+
+22. drop database testyantra;
+Query OK, 0 rows affected (0.19 sec)
+
+23. show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+DATE:20-12-2019
+
+1. select distinct deptid from Employee_Info;
++--------+
+| deptid |
++--------+
+|     10 |
+|     20 |
+|     40 |
+|     30 |
++--------+
+
+2. select distinct deptid,designation from Employee_Info;
++--------+-------------------+
+| deptid | designation       |
++--------+-------------------+
+|     10 | SoftwareDeveloper |
+|     20 | analyst           |
+|     10 | HR                |
+|     40 | SoftwareDeveloper |
+|     30 | analyst           |
+|     10 | analyst           |
+|     20 | tester            |
+|     30 | manager           |
+|     40 | manager           |
++--------+-------------------+
+
+3.select * from Employee_Info where designation='SoftwareDeveloper';
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation       | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| 128 | anitha  | 9876543219 | anitha@gmail.com  | 1995-01-22    | SoftwareDeveloper |  20000 |     10 | 2018-02-02      | a+         | female |
+| 177 | vanitha | 9851243219 | vanitha@gmail.com | 1995-10-22    | SoftwareDeveloper |  29550 |     40 | 2017-07-01      | ab+        | female |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+
+4.select name, mobileNo from Employee_Info where salary>1500;
++---------+------------+
+| name    | mobileNo   |
++---------+------------+
+| anitha  | 9876543219 |
+| rani    | 9544543217 |
+| harish  | 9474543219 |
+| vanitha | 9851243219 |
+| ramya   | 8444543217 |
+| nikhil  | 6874543219 |
+| sunitha | 9884543219 |
+| ramesh  | 9644543217 |
+| suresh  | 7444543217 |
+| shankar | 7884543219 |
++---------+------------+
+
+5. select * from Employee_Info where salary<=25000;
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation       | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| 128 | anitha  | 9876543219 | anitha@gmail.com  | 1995-01-22    | SoftwareDeveloper |  20000 |     10 | 2018-02-02      | a+         | female |
+| 357 | sunitha | 9884543219 | sunitha@gmail.com | 1996-02-23    | tester            |  25000 |     20 | 2017-02-02      | o+         | female |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+
+6.select * from Employee_Info where designation!='tester';
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation       | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| 128 | anitha  | 9876543219 | anitha@gmail.com  | 1995-01-22    | SoftwareDeveloper |  20000 |     10 | 2018-02-02      | a+         | female |
+| 165 | rani    | 9544543217 | rani@gmail.com    | 1994-09-20    | analyst           |  40000 |     20 | 2017-12-18      | o-         | female |
+| 174 | harish  | 9474543219 | harish@gmail.com  | 1995-08-13    | HR                |  75550 |     10 | 2016-03-10      | a-         | male   |
+| 177 | vanitha | 9851243219 | vanitha@gmail.com | 1995-10-22    | SoftwareDeveloper |  29550 |     40 | 2017-07-01      | ab+        | female |
+| 244 | ramya   | 8444543217 | ramya@gmail.com   | 1988-09-20    | analyst           |  39000 |     30 | 2017-08-14      | o+         | female |
+| 245 | nikhil  | 6874543219 | nikhil@gmail.com  | 1995-08-13    | analyst           |  30000 |     10 | 2019-03-10      | a-         | male   |
+| 477 | ramesh  | 9644543217 | ramesh@gmail.com  | 1986-02-23    | manager           |  35000 |     30 | 2017-06-08      | o+         | male   |
+| 574 | suresh  | 7444543217 | suresh@gmail.com  | 1988-05-23    | manager           |  54950 |     40 | 2017-06-08      | o+         | male   |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+
+7.select salary+5000  from Employee_Info;
++-------------+
+| salary+5000 |
++-------------+
+|       25000 |
+|       45000 |
+|       80550 |
+|       34550 |
+|       44000 |
+|       35000 |
+|       30000 |
+|       40000 |
+|       59950 |
+|       32000 |
++-------------+
+
+8.select salary+5000 as incremented  from Employee_Info;
++-------------+
+| incremented |
++-------------+
+|       25000 |
+|       45000 |
+|       80550 |
+|       34550 |
+|       44000 |
+|       35000 |
+|       30000 |
+|       40000 |
+|       59950 |
+|       32000 |
++-------------+
+
+9.select salary*12 as annual from Employee_Info;
++--------+
+| annual |
++--------+
+| 240000 |
+| 480000 |
+| 906600 |
+| 354600 |
+| 468000 |
+| 360000 |
+| 300000 |
+| 420000 |
+| 659400 |
+| 324000 |
++--------+
+
+10.select * from Employee_Info where designation='SoftwareDeveloper' and deptid=10;
++-----+--------+------------+------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| eid | name   | mobileNo   | emailId          | Date_of_birth | designation       | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+--------+------------+------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| 128 | anitha | 9876543219 | anitha@gmail.com | 1995-01-22    | SoftwareDeveloper |  20000 |     10 | 2018-02-02      | a+         | female |
++-----+--------+------------+------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+
+11.select * from Employee_Info where designation ='tester' and Date_of_joining >'2015-12-31';
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| 357 | sunitha | 9884543219 | sunitha@gmail.com | 1996-02-23    | tester      |  25000 |     20 | 2017-02-02      | o+         | female |
+| 874 | shankar | 7884543219 | shankar@gmail.com | 1991-02-23    | tester      |  27000 |     20 | 2016-02-02      | b+         | male   |
+
+12.select * from Employee_Info where designation='manager' and deptid=30 and salary>25000;
++-----+--------+------------+------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| eid | name   | mobileNo   | emailId          | Date_of_birth | designation | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+--------+------------+------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| 477 | ramesh | 9644543217 | ramesh@gmail.com | 1986-02-23    | manager     |  35000 |     30 | 2017-06-08      | o+         | male   |
++-----+--------+------------+------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+
+13.select * from Employee_Info where designation='HR' or deptid=20;
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| 165 | rani    | 9544543217 | rani@gmail.com    | 1994-09-20    | analyst     |  40000 |     20 | 2017-12-18      | o-         | female |
+| 174 | harish  | 9474543219 | harish@gmail.com  | 1995-08-13    | HR          |  75550 |     10 | 2016-03-10      | a-         | male   |
+| 357 | sunitha | 9884543219 | sunitha@gmail.com | 1996-02-23    | tester      |  25000 |     20 | 2017-02-02      | o+         | female |
+| 874 | shankar | 7884543219 | shankar@gmail.com | 1991-02-23    | tester      |  27000 |     20 | 2016-02-02      | b+         | male   |
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+
+14.select * from Employee_Info where Date_of_birth<'1995-01-01' or Bloodgroup='o+';
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+| 165 | rani    | 9544543217 | rani@gmail.com    | 1994-09-20    | analyst     |  40000 |     20 | 2017-12-18      | o-         | female |
+| 244 | ramya   | 8444543217 | ramya@gmail.com   | 1988-09-20    | analyst     |  39000 |     30 | 2017-08-14      | o+         | female |
+| 357 | sunitha | 9884543219 | sunitha@gmail.com | 1996-02-23    | tester      |  25000 |     20 | 2017-02-02      | o+         | female |
+| 477 | ramesh  | 9644543217 | ramesh@gmail.com  | 1986-02-23    | manager     |  35000 |     30 | 2017-06-08      | o+         | male   |
+| 574 | suresh  | 7444543217 | suresh@gmail.com  | 1988-05-23    | manager     |  54950 |     40 | 2017-06-08      | o+         | male   |
+| 874 | shankar | 7884543219 | shankar@gmail.com | 1991-02-23    | tester      |  27000 |     20 | 2016-02-02      | b+         | male   |
++-----+---------+------------+-------------------+---------------+-------------+--------+--------+-----------------+------------+--------+
+
+15. select name,emailId from Employee_Info where designation='tester' or designation='analyst' or designation= 'SoftwareDeveloper';
++---------+-------------------+
+| name    | emailId           |
++---------+-------------------+
+| anitha  | anitha@gmail.com  |
+| rani    | rani@gmail.com    |
+| vanitha | vanitha@gmail.com |
+| ramya   | ramya@gmail.com   |
+| nikhil  | nikhil@gmail.com  |
+| sunitha | sunitha@gmail.com |
+| shankar | shankar@gmail.com |
++---------+-------------------+
+
+16.select * from Employee_Info where not designation = 'analyst';
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation       | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| 128 | anitha  | 9876543219 | anitha@gmail.com  | 1995-01-22    | SoftwareDeveloper |  20000 |     10 | 2018-02-02      | a+         | female |
+| 174 | harish  | 9474543219 | harish@gmail.com  | 1995-08-13    | HR                |  75550 |     10 | 2016-03-10      | a-         | male   |
+| 177 | vanitha | 9851243219 | vanitha@gmail.com | 1995-10-22    | SoftwareDeveloper |  29550 |     40 | 2017-07-01      | ab+        | female |
+| 357 | sunitha | 9884543219 | sunitha@gmail.com | 1996-02-23    | tester            |  25000 |     20 | 2017-02-02      | o+         | female |
+| 477 | ramesh  | 9644543217 | ramesh@gmail.com  | 1986-02-23    | manager           |  35000 |     30 | 2017-06-08      | o+         | male   |
+| 574 | suresh  | 7444543217 | suresh@gmail.com  | 1988-05-23    | manager           |  54950 |     40 | 2017-06-08      | o+         | male   |
+| 874 | shankar | 7884543219 | shankar@gmail.com | 1991-02-23    | tester            |  27000 |     20 | 2016-02-02      | b+         | male   |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+
+17.select * from Employee_Info where not deptId=10 and not deptId=20 and not deptId=30;
+or
+select * from Employee_Info where not (deptId=10 or deptId=20 or deptId=30);
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation       | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| 177 | vanitha | 9851243219 | vanitha@gmail.com | 1995-10-22    | SoftwareDeveloper |  29550 |     40 | 2017-07-01      | ab+        | female |
+| 574 | suresh  | 7444543217 | suresh@gmail.com  | 1988-05-23    | manager           |  54950 |     40 | 2017-06-08      | o+         | male   |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+
+18.select * from Employee_Info where not(deptId=40 and designation='tester');
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| eid | name    | mobileNo   | emailId           | Date_of_birth | designation       | salary | deptid | Date_of_joining | Bloodgroup | Gender |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
+| 128 | anitha  | 9876543219 | anitha@gmail.com  | 1995-01-22    | SoftwareDeveloper |  20000 |     10 | 2018-02-02      | a+         | female |
+| 165 | rani    | 9544543217 | rani@gmail.com    | 1994-09-20    | analyst           |  40000 |     20 | 2017-12-18      | o-         | female |
+| 174 | harish  | 9474543219 | harish@gmail.com  | 1995-08-13    | HR                |  75550 |     10 | 2016-03-10      | a-         | male   |
+| 177 | vanitha | 9851243219 | vanitha@gmail.com | 1995-10-22    | SoftwareDeveloper |  29550 |     40 | 2017-07-01      | ab+        | female |
+| 244 | ramya   | 8444543217 | ramya@gmail.com   | 1988-09-20    | analyst           |  39000 |     30 | 2017-08-14      | o+         | female |
+| 245 | nikhil  | 6874543219 | nikhil@gmail.com  | 1995-08-13    | analyst           |  30000 |     10 | 2019-03-10      | a-         | male   |
+| 357 | sunitha | 9884543219 | sunitha@gmail.com | 1996-02-23    | tester            |  25000 |     20 | 2017-02-02      | o+         | female |
+| 477 | ramesh  | 9644543217 | ramesh@gmail.com  | 1986-02-23    | manager           |  35000 |     30 | 2017-06-08      | o+         | male   |
+| 574 | suresh  | 7444543217 | suresh@gmail.com  | 1988-05-23    | manager           |  54950 |     40 | 2017-06-08      | o+         | male   |
+| 874 | shankar | 7884543219 | shankar@gmail.com | 1991-02-23    | tester            |  27000 |     20 | 2016-02-02      | b+         | male   |
++-----+---------+------------+-------------------+---------------+-------------------+--------+--------+-----------------+------------+--------+
