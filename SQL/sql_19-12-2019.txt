@@ -1,0 +1,154 @@
+
+DATE:19-12-2019
+
+1.show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+2. use bcits;
+Database changed
+
+3. desc Student_info;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| Sid      | int(10)      | NO   | PRI | NULL    |       |
+| Name     | varchar(150) | NO   |     | NULL    |       |
+| MobileNo | int(11)      | YES  |     | NULL    |       |
+| marks    | double       | YES  |     | NULL    |       |
+| email    | varchar(100) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+4. select * from Student_info;
++-----+------+-----------+-------+----------------+
+| Sid | Name | MobileNo  | marks | email          |
++-----+------+-----------+-------+----------------+
+|   1 | a    | 798745634 |    54 | abc@gmail.com  |
+|   2 | b    | 985486455 |    74 | bcd@gmail.com  |
+|   3 | c    | 775546455 |    54 | edd@gmail.com  |
+|   4 | d    | 944546455 |    54 | ded@gmail.com  |
+|   5 | e    | 984546455 |    95 | dssd@gmail.com |
+|   6 | s    | 747394056 |    97 | dsdw@gmail.com |
+|   7 | e    | 984546455 |    95 | dssd@gmail.com |
+|   8 | ze   | 984546455 |    95 | dssd@gmail.com |
+|   9 | z    | 747394056 |    97 | dsdw@gmail.com |
++-----+------+-----------+-------+----------------+
+9 rows in set (0.00 sec)
+
+5.delete from Student_info where Sid=7;
+Query OK, 1 row affected (0.09 sec)
+
+6.alter table Student_info add(place varchar(20));
+Query OK, 0 rows affected (1.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+7.select * from Student_info;
++-----+------+-----------+-------+----------------+-------+
+| Sid | Name | MobileNo  | marks | email          | place |
++-----+------+-----------+-------+----------------+-------+
+|   1 | a    |  98745634 |    54 | abc@gmail.com  | NULL  |
+|   2 | b    |   5486455 |    74 | bcd@gmail.com  | NULL  |
+|   3 | c    |   5546455 |    54 | edd@gmail.com  | NULL  |
+|   4 | d    |  44546455 |    54 | ded@gmail.com  | NULL  |
+|   5 | e    | 984546455 |    95 | dssd@gmail.com | NULL  |
+|   6 | s    | 747394056 |    97 | dsdw@gmail.com | NULL  |
+|   8 | ze   | 984546455 |    95 | dssd@gmail.com | NULL  |
+|   9 | z    | 747394056 |    97 | dsdw@gmail.com | NULL  |
++-----+------+-----------+-------+----------------+-------+
+8 rows in set (0.00 sec)
+
+8. alter table Student_info drop column place;
+Query OK, 0 rows affected (0.63 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+9.alter table Student_info modify MobileNo int(11);
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+10.update Student_info set MobileNo= 98765435 where Sid=3;
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+11.drop table Student_info;
+Query OK, 0 rows affected (0.20 sec)
+
+12.create table Student_info (Sid int(10) primary key, Name varchar(20) not null,MobileNo int(11), marks double, email varchar(100));
+Query OK, 0 rows affected (0.63 sec)
+
+13.insert into Student_info values(1,'a',75648732,54,'agfs@gmail.com');
+Query OK, 1 row affected (0.33 sec)
+
+14.insert into Student_info values(2,'b',88648732,54,'ytfs@gmail.com');
+Query OK, 1 row affected (0.08 sec)
+
+15. insert into Student_info values(3,'c',898748732,57,'abfs@gmail.com');
+Query OK, 1 row affected (0.08 sec)
+
+16. insert into Student_info values(4,'d',998748732,97,'ete@gmail.com');
+Query OK, 1 row affected (0.08 sec)
+
+17. select * from Student_info;
++-----+------+-----------+-------+----------------+
+| Sid | Name | MobileNo  | marks | email          |
++-----+------+-----------+-------+----------------+
+|   1 | a    |  75648732 |    54 | agfs@gmail.com |
+|   2 | b    |  88648732 |    54 | ytfs@gmail.com |
+|   3 | c    | 898748732 |    57 | abfs@gmail.com |
+|   4 | d    | 998748732 |    97 | ete@gmail.com  |
++-----+------+-----------+-------+----------------+
+4 rows in set (0.00 sec)
+
+18.rename Student_info to Student;
+Query OK, 0 rows affected (0.43 sec)
+
+19. select * from Student;
++-----+------+-----------+-------+----------------+
+| Sid | Name | MobileNo  | marks | email          |
++-----+------+-----------+-------+----------------+
+|   1 | a    |  75648732 |    54 | agfs@gmail.com |
+|   2 | b    |  88648732 |    54 | ytfs@gmail.com |
+|   3 | c    | 898748732 |    57 | abfs@gmail.com |
+|   4 | d    | 998748732 |    97 | ete@gmail.com  |
++-----+------+-----------+-------+----------------+
+4 rows in set (0.00 sec)
+
+20.create database testyantra;
+Query OK, 1 row affected (0.00 sec)
+
+21. show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sys                |
+| testyantra         |
++--------------------+
+6 rows in set (0.00 sec)
+
+22. drop database testyantra;
+Query OK, 0 rows affected (0.19 sec)
+
+23. show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bcits              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
