@@ -1,0 +1,113 @@
+DATE:23-12-2019
+
+1.select Avg(salary) from employee_info;
++-------------------+
+| Avg(salary)       |
++-------------------+
+| 36913.63636363636 |
++-------------------+
+
+2.select max(salary) from employee_info;
++-------------+
+| max(salary) |
++-------------+
+|       75550 |
++-------------+
+
+3. select min(salary) from employee_info;
++-------------+
+| min(salary) |
++-------------+
+|       20000 |
++-------------+
+
+4.select sum(salary) from employee_info;
++-------------+
+| sum(salary) |
++-------------+
+|      406050 |
++-------------+
+
+5.select count(salary) from employee_info;
++---------------+
+| count(salary) |
++---------------+
+|            11 |
++---------------+
+
+6.select upper(name) from employee_info;
+
+7.select lower(name) from employee_info;
+
+8.select length(name) from employee_info;
+
+9.select concat(eid,name) from employee_info;
+
+10.select reverse(name) from employee_info;
+
+11.select substr(name,1,2) from employee_info;
+
+12. select instr(name,'an') from employee_info;
+
+13. create table department( deptid int primary key, dname varchar(150), location varchar(200));
+
+14. insert into department (deptid, dname, location) values (10,'admin',' noida');
+
+15.insert into department (deptid, dname, location) values (20,'hr',' pune');
+
+16.insert into department (deptid, dname, location) values (30,'sales','bangalore');
+
+17.insert into department values(40,'operation','chennai');
+
+18.select * from employee_info order by salary;
+
+19.select count(name) from employee_info where deptid=10 group by name;
+
+20.select count(name) from employee_info where deptid=10 group by age having age>20;
+
+21.set autocommit=0;
+
+22.insert into department values(50,'operation','chennai');
+
+23.rollback;
+
+24.select * from department;
+
+25.select count(*) from employee_info group by designation having designation is null;
+
+26.savepoint a;
+
+27.delete from employee_info where eid=156;
+
+28.savepoint b;
+
+29.delete from employee_info where eid=156;
+
+30.rollback to a;
+
+31.select * from employee_info cross join department;
+
+32.select * from employee_info inner join department on employee_info.deptid=department.deptid;
+
+33.select employee_info.deptid,name,dname,department.deptid from employee_info inner join department on employee_info.deptid=department.deptid;
+
+34.select * from employee_info natural join department;
+
+35.select * from employee_info left outer join department on employee_info.deptid=department.deptid;
+
+36.select * from employee_info as emp  right outer join department as dept on emp.deptid=dept.deptid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
