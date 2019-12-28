@@ -1,0 +1,24 @@
+DATE: 28-12-2019
+
+1. create database employee_management_info;
+2. use employee_management_info;
+3. create table Employee_Primary_Info (empid int primary key,name varchar(20),mobileno long, official_mailID varchar(150), date_of_birth date, date_of_joining date, designation varchar(100),bloodgroup varchar(10),salary double,deptID int, managerID int);
+4. desc employee_primary_info;
+5.insert into employee_primary_info values(123,'sowmya',9876543211,'sowmya@gmail.com','1998-02-14','2018-12-13','tester','o+',25000,20,234);
+6.insert into employee_primary_info values(233,'shankar',8545432114,'shankar@gmail.com','1994-12-04','2014-02-23','hr','a+',35000,10,154),(741,'harish',7776543211,'harish@gmail.com','1997-08-14','2018-05-23','clerk','b+',20000,30,245),(563,'anitha',9566543211,'anitha@gmail.com','1998-08-12','2018-11-18','tester','a-',35000,30,156),(146,'bavya',9245968114,'bavya@gmail.com','1997-05-24','2015-04-26','SoftwareDeveloper','o+',35000,10,204),(241,'sashi',9775443211,'sashi@gmail.com','1996-09-24','2018-05-14','clerk','a+',15000,20,795),(183,'ramya',9996543211,'ramya@gmail.com','1984-03-18','2015-01-18','manager','a+',39000,10,109),(146,'bavya',9245968114,'bavya@gmail.com','1997-05-24','2015-04-26','SoftwareDeveloper','o+',35000,10,204),(241,'sashi',9775443211,'sashi@gmail.com','1996-09-24','2018-05-14','clerk','a+',15000,20,795),(183,'ramya',9996543211,'ramya@gmail.com','1984-03-18','2015-01-18','manager','a+',39000,10,109);
+7.select * from employee_primary_info;
+8.create table employee_secondary_info (empid int primary key,gender varchar(10),personal_emailID varchar(50), age int,nationality varchar(20),isMarried varchar(10),govtID varchar(100), guardian_name varchar(100), guardian_phoneNo long,managerID int, job_location varchar(100));
+9.insert into employee_secondary_info values(123, 'female','sowmya1@gmail.com',20,'indian','no','PanCard','veena',9586741253,183,'bangalore');
+10.insert into employee_secondary_info values(146, 'female','bavya67@gmail.com',22,'indian','yes','PassPort','rathna',6676741253,183,'pune'),(163, 'female','rekha123@gmail.com',31,'indian','yes','AadharCard','nayana',9589941253,183,'bangalore');
+11.insert into employee_secondary_info values(183, 'female','ramya67@gmail.com',37,'indian','yes','PassPort','sunitha',7876741253,233,'hyderabad'),(216, 'female','bindushankar@gmail.com',26,'indian','no','AadharCard','shankar',9547941253,183,'bangalore');
+12. insert into employee_secondary_info values(233, 'male','shankar7@gmail.com',26,'indian','yes','PassPort','sangitha',6676741253,183,'hyderabad'),(241, 'female','shashi67@gmail.com',24,'american','no','AadharCard','sunitha',7747941253,183,'bangalore'),(563, 'female','anitha@gmail.com',21,'indian','yes','PanCard','veena',9586741253,183,'bangalore'),(741,'male','harishraj@gmail.com',22,'indian','no','PanCard','vignesh',8586741253,233,'pune'),(141, 'female','sushma11@gmail.com',20,'indian','no','PanCard','veena',9586741253,183,'bangalore');
+13.select * from employee_secondary_info;
+14.create table dept_info (dept_id int primary key, deptname varchar(100), dept_mgr_id int);
+15.insert into dept_info values(10,'admin',183);
+16.insert into dept_info values(20,'hr',183),(40,'sales',233);
+17.insert into dept_info (30,'operator',233);
+18.select * from dept_info;
+19.create table employee_bank_info(empid int primary key,accountno long,bank_name varchar(100),Branch_name varchar(100),IFSC_code varchar(100));
+20.insert into employee_bank_info values(123, 12345678,'ICICI','MYSORE','ICICI404'),(141,84712565,'SBI','SRINAGAR','SBI867'),(146,254684524,'ICICI','PUNE','ICICI547');
+21.insert into employee_bank_info values(163, 45345678,'SBI','MYSORE','SBI204'),(183,15712565,'ICICI','SRINAGAR','ICICI867'),(216,289684524,'SBM','MYSORE','SBM547'),(233,54746511,'CORPORATION','JAYANAGAR','CORP1672');
+22.insert into employee_bank_info values(241,487522565,'ICICI','SRINAGAR','ICICI867'),(563,574884524,'SBM','MYSORE','SBM547'),(741,8914746511,'CORPORATION','VIJAYANAGAR','CORP8772');
