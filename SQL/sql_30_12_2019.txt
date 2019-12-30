@@ -1,0 +1,16 @@
+DATE:-30-12-2019
+
+1.show databases;
+2. use employee_management_info;
+3.create table employee_address_info (empid int, address_type varchar(200), houseNo int,address1 varchar(200),address2 varchar(200),landmark varchar(200),city varchar(200),pincode int,primary key(empid,address_type));
+4.select * from employee_address_info;
+5.desc employee_address_info;
+6.insert into employee_address_info values(123,'permanent',2,'2nd main','srinagar','icici bank','bangalore',573929);
+7.insert into employee_address_info values(141,'permanent',3,'3rd main','rajajinagar'," ",'bangalore',573955);
+8.insert into employee_address_info values(163,'permanent',10,'1st main','srinagar',' ','mysore',575955),(183,'current',11,'4th main','rajajinagar',' ','bangalore',573955),(216,'current',40,'1st main','rajajinagar',' ','bangalore',573955),(233,'current',101,'3rd main','srinagar',' ','pune',573955),(241,'permanent',85,'1st main','rajajinagar',' ','bangalore',573955),(563,'current',11,'2nd main','rajajinagar',' ','bangalore',573955),(741,'current',156,'4th main','rajajinagar',' ','bangalore',573955);
+9.select * from employee_address_info;
+10.create table employee_education_info (empid int,education_type varchar(200),collegeName varchar(200),year_of_passout date,stream varchar(200),percentage double,universityName varchar(200),primary key(empid,education_type));
+11.insert into employee_education_info values(123,'12th','sgm','2015-05-31',' ',75,'state board'),(123,'degree','sgm','2018-05-31',' ',65,'state board');
+12.insert into employee_education_info values(141,'10th','mcs','2013-05-31',' ',68,'state board'),(141,'12th','jss','2015-05-31',' ',71,'state board'),(141,'degree','gsss','2019-05-31',' ',62,'vtu');
+13.insert into employee_education_info values(146,'10th','mcs','2013-05-31',' ',68,'state board'),(146,'12th','jss','2015-05-31',' ',71,'cbsc'),(146,'degree','gsss','2019-05-31',' ',63,'vtu');
+14.insert into employee_education_info values(163,'10th','mcs','2013-05-31',' ',68,'state board'),(163,'12th','jss','2015-05-31',' ',71,'cbsc'),(163,'degree','jss','2019-05-31',' ',68,'vtu'),(183,'10th','mcs','2013-05-31',' ',78,'state board'),(183,'12th','jss','2015-05-31',' ',75,'cbsc'),(183,'degree','jss','2019-05-31',' ',68,'vtu'),(216,'10th','mcs','2012-05-31',' ',88,'ICSC'),(216,'12th','mcs','2014-05-31',' ',85,'cbsc'),(216,'degree','jc','2017-05-31',' ',78,'vtu'),(233,'10th','mcs','2012-05-31',' ',88,'ICSC'),(233,'12th','mcs','2014-05-31',' ',85,'cbsc'),(233,'degree','jc','2017-05-31',' ',78,'vtu');
