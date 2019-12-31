@@ -1,0 +1,8 @@
+DATE:- 31-12-2019
+
+1.show databses;
+2. use employee_management_info;
+3.select * from employee_education_info;
+4.insert into employee_education_info values(563,'10th','mcs','2013-05-31',' ',68,'state board'),(563,'12th','jss','2015-05-31','pcmb ',71,'cbsc'),(563,'degree','jc','2019-05-31','EC ',68,'vtu'),(741,'10th','jss','2013-05-31',' ',88,'state board'),(741,'12th','jss','2015-05-31','pcmc ',75,'cbsc'),(741,'degree','jc','2019-05-31','EE ',68,'vtu');
+5.select * from employee_education_info;
+6.
