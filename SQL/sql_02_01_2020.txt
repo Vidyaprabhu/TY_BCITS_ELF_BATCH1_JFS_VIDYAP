@@ -1,0 +1,14 @@
+DATE:-02-01-2020
+
+1.show databases;
+2.use employee_management_info;
+3.select * from  project_info;
+4. desc  project_info;
+5.insert into  project_info values(1,'bank','java', '2018-01-12','2019-02-19','bangalore');
+6.insert into  project_info values(2,'hospital','python', '2017-04-17','2019-10-14','bangalore'),(3,'govt','java','2016-04-18','2019-05-19','pune');
+7. select * from  project_info;
+8.create table employee_project_info (empid int ,proj_id int,primary key(empid, proj_id));
+9.select * from employee_primary_info;
+10.insert into employee_project_info values(123,1),(141,2),(146,3),(163,1),(183,3),(216,2),(232,2),(233,1),(234,2),(241,2),(563,1),(741,1);
+11.select * from employee_project_info;
+12.update employee_address_info set address_type='local' where address_type='current';
