@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="fname">Name</label><br>
+            <input type="text" name="name" id="fname">
+        </div>
+        <div>
+            <label for="mobile">Mobile</label><br>
+            <input type="tel" name="mobile" id="mobile">
+        </div>
+        <div>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="gender">Gender</label><br>
+            <input type="radio" name="gender" id="gender">Male
+            <input type="radio" name="gender" id="gender">Female
+            <input type="radio" name="gender" id="gender">Others
+        </div>
+        <div>
+            <label for="cv">Upload</label>
+            <input type="file" name="cv" id="cv">
+        </div>
+        <div>
+            <label for="month">Joining Month</label><br>
+            <select name="month" id="month">
+                <option value="0" selected disabled>select</option>
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                <option value="mar">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Comments:</label><br>
+            <textarea name="comments" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" name="chk" id="">
+            <label for="">i agree to the terms and conditions</label>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <!-- <button type="reset">Reset</button>
+            <button type="submit">Submit</button> -->
+        </div>
+    </form>
+</body>
+</html>
