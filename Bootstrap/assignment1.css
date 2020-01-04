@@ -1,0 +1,12 @@
+button{
+    width: 400px;
+    height: 75px;
+    font-size: 4rem;
+    border-radius: 1.25rem;
+}
+p{
+    font-size: large;
+}
+i{
+    font-size: 100px;
+}
