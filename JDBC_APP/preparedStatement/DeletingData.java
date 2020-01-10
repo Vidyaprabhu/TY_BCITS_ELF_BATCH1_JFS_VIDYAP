@@ -1,5 +1,5 @@
 package com.bcits.jdbcapp.preparedstatement;
-
+ 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.PreparedStatement;
 public class DeletingData {
 	public static void main(String[] args) {
 		Connection con=null;
-		PreparedStatement pstmt=null;
-
+		PreparedStatement pstmt=null; 
+  
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 
